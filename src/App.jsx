@@ -4,6 +4,13 @@ import './App.css'
 import { Button } from './components/ui/button'
 import LandingPage from './pages/landing'
 import AppLayot from './layouts/app-layout'
+import { ThemeProvider } from './components/theme-provider'
+import Onboarding from './pages/onboarding'
+import JobListing from './pages/job-listing'
+import JobPage from './pages/job'
+import PostJob from './pages/post-job'
+import SavedJobs from './pages/saved-jobs'
+import MyJobs from './pages/my-jobs'
 
 const router= createBrowserRouter([{
   
@@ -14,7 +21,7 @@ const router= createBrowserRouter([{
        element: <LandingPage/>
       },
         {
-       path: '/onborading',
+       path: '/onboarding',
        element: <Onboarding/>
       },
            {
@@ -42,7 +49,9 @@ const router= createBrowserRouter([{
 
 function App() {
   return (
+  <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
   <RouterProvider router={router}/>
+  </ThemeProvider>
   )
 }
 
